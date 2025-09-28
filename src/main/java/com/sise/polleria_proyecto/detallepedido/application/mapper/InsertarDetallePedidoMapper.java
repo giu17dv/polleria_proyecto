@@ -1,6 +1,6 @@
 package com.sise.polleria_proyecto.detallepedido.application.mapper;
 
-import com.sise.polleria_proyecto.common.application.IEntityDtoMapper;
+import com.sise.polleria_proyecto.common.application.dto.response.IEntityDtoMapper;
 import com.sise.polleria_proyecto.detallepedido.application.dto.request.InsertarDetallePedidoRequestDto;
 import com.sise.polleria_proyecto.detallepedido.application.dto.response.InsertarDetallePedidoResponseDto;
 import com.sise.polleria_proyecto.detallepedido.domain.entities.DetallePedido;

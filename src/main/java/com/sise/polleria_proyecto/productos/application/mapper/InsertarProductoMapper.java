@@ -1,8 +1,8 @@
 package com.sise.polleria_proyecto.productos.application.mapper;
 
+import com.sise.polleria_proyecto.common.application.dto.response.IEntityDtoMapper;
 import com.sise.polleria_proyecto.productos.application.dto.request.InsertarProductoRequestDto;
 import com.sise.polleria_proyecto.productos.application.dto.response.InsertarProductoResponseDto;
-import com.sise.polleria_proyecto.common.application.IEntityDtoMapper;
 import com.sise.polleria_proyecto.productos.domain.entities.Producto;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +12,7 @@ public class InsertarProductoMapper implements IEntityDtoMapper<Producto, Insert
     @Override
     public Producto requestToEntity(InsertarProductoRequestDto requestDto) {
         Producto producto = new Producto();
-        producto.setNombre_producto(requestDto.getNombre_producto());
+        producto.setNombre_producto(requestDto.getNombreProducto());
         producto.setDescripcion(requestDto.getDescripcion());
         producto.setPrecio(requestDto.getPrecio());
         producto.setTipo(requestDto.getTipo());
@@ -23,11 +23,11 @@ public class InsertarProductoMapper implements IEntityDtoMapper<Producto, Insert
     public InsertarProductoResponseDto entityToResponse(Producto entity) {
         InsertarProductoResponseDto responseDto = new InsertarProductoResponseDto();
         
-        responseDto.setNombre_producto(entity.getNombre_producto());
+        responseDto.setNombreProducto(entity.getNombre_producto());
         responseDto.setDescripcion(entity.getDescripcion());
         responseDto.setPrecio(entity.getPrecio());
+
         responseDto.setTipo(entity.getTipo());
-        responseDto.setFecha_creacion(entity.getFecha_creacion());
         
         return responseDto;
     }

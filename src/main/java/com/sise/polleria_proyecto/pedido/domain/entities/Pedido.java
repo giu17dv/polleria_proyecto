@@ -8,7 +8,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
-import java.time.LocalDateTime;
+
 
 
 
@@ -30,7 +30,7 @@ public class Pedido {
 
 
     @Column(name = "fecha_hora_pedido")
-    private LocalDateTime fechaHoraPedido;
+    private String fechaHoraPedido;
 
     
     @Column(name = "estado")
@@ -40,10 +40,10 @@ public class Pedido {
     private Double total;
 
     @Column(name = "fecha_creacion", updatable = false)
-    private LocalDateTime fechaCreacion;
+    private String fechaCreacion;
 
     @Column(name = "fecha_modificacion")
-    private LocalDateTime fechaModificacion;
+    private String fechaModificacion;
 
     
 }

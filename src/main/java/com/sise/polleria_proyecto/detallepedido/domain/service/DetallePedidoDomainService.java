@@ -23,4 +23,22 @@ public class DetallePedidoDomainService {
     public List<DetallePedido> listarDetallePedidos() {
         return detallePedidoRepository.findAll();
     }
+
+    public DetallePedido editarDetallePedido(DetallePedido detallePedido) {
+        if (detallePedidoRepository.existsById(detallePedido.getIdDetallePedido())) {
+            detallePedidoRepository.save(detallePedido);
+            return detallePedidoRepository.findById(detallePedido.getIdDetallePedido()).orElse(null);
+        } else {
+            return null;
+        }
+    }
+
+    public DetallePedido eliminarDetallePedido(DetallePedido detallePedido) {
+        if (detallePedidoRepository.existsById(detallePedido.getIdDetallePedido())) {
+            detallePedidoRepository.deleteById(detallePedido.getIdDetallePedido());
+            return detallePedido;
+        } else {
+            return null;
+        }
+    }
 }

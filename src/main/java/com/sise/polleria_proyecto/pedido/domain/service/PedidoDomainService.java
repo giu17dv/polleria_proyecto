@@ -19,8 +19,26 @@ public class PedidoDomainService {
         
     }
 
-    public List<Pedido> listarPedidos() {
+    public List<Pedido> listarPedido() {
         return pedidoRepository.findAll();
+    }
+
+    public Pedido editarPedido(Pedido pedido) {
+        if (pedidoRepository.existsById(pedido.getIdPedido())) {
+            pedidoRepository.save(pedido);
+            return pedidoRepository.findById(pedido.getIdPedido()).orElse(null);
+        } else {
+            return null;
+        }
+    }
+
+    public Pedido eliminarPedido(Pedido pedido) {
+        if (pedidoRepository.existsById(pedido.getIdPedido())) {
+            pedidoRepository.deleteById(pedido.getIdPedido());
+            return pedido;
+        } else {
+            return null;
+        }
     }
 
 }

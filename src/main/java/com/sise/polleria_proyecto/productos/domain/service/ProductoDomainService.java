@@ -22,4 +22,22 @@ public class ProductoDomainService {
     public List<Producto> listarProductos() {
         return productoRepository.findAll();
     }
+
+    public Producto editarProducto(Producto producto) {
+        if (productoRepository.existsById(producto.getId_producto())) {
+            productoRepository.save(producto);
+            return productoRepository.findById(producto.getId_producto()).orElse(null);
+        } else {
+            return null;
+        }
+    }
+
+    public Producto eliminarProducto(Producto producto) {
+        if (productoRepository.existsById(producto.getId_producto())) {
+            productoRepository.deleteById(producto.getId_producto());
+            return producto;
+        } else {
+            return null;
+        }
+    }
 }

@@ -23,4 +23,26 @@ public class UsuarioDomainService {
         return usuarioRepository.findAll();
     }
 
+    
+
+    // Editar Usuario
+    public Usuario editarUsuario(Usuario usuario) {
+        if (usuarioRepository.existsById(usuario.getIdUsuario())) {
+            usuarioRepository.save(usuario);
+            return usuarioRepository.findById(usuario.getIdUsuario()).orElse(null);
+        } else {
+            return null;
+        }
+    }
+
+    // Eliminar Usuario
+    public Usuario eliminarUsuario(Usuario usuario) {
+        if (usuarioRepository.existsById(usuario.getIdUsuario())) {
+            usuarioRepository.deleteById(usuario.getIdUsuario());
+            return usuario;
+        } else {
+            return null;
+        }
+    }
+
 }

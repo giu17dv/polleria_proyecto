@@ -1,6 +1,5 @@
 package com.sise.polleria_proyecto.productos.domain.entities;
-import java.time.LocalDateTime;
-import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
@@ -33,10 +32,10 @@ public class Producto {
     private String tipo;
 
     @Column(name="fecha_creacion", insertable = false, updatable = false) 
-    private LocalDateTime fecha_creacion;
+    private String fecha_creacion;
 
     @Column(name="fecha_modificacion", insertable = false, updatable = false)
-    private Date fecha_modificacion;
+    private String fecha_modificacion;
 
 /* 
     public Integer getId_producto() {

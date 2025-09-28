@@ -1,4 +1,4 @@
-package com.sise.polleria_proyecto.common.application;
+package com.sise.polleria_proyecto.common.application.dto.response;
 
 
 

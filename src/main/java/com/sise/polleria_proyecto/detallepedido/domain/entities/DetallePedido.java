@@ -1,6 +1,6 @@
 package com.sise.polleria_proyecto.detallepedido.domain.entities;
 
-import java.time.LocalDateTime;
+
 
 
 import jakarta.persistence.Column;
@@ -35,9 +35,9 @@ public class DetallePedido {
     private Double precioUnitario;
 
     @Column(name = "fecha_creacion", updatable = false)
-    private LocalDateTime fechaCreacion;
+    private String fechaCreacion;
 
     @Column(name = "fecha_modificacion")
-    private LocalDateTime fechaModificacion;
+    private String fechaModificacion;
 
 }
